@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t xqopxcat/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run xqopxcat/docker-react npm run test -- --coverage
